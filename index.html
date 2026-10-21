@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yangi Hayot (Toxa) — Zamonaviy Turar-Joy Majmuasi & Aqlli Xonadonlar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="yh-header">
+    <div class="container nav-box">
+      <a href="#" class="brand-yh">
+        <i class="fa-solid fa-city"></i>
+        <span>YANGI HAYOT<span class="sub-toxa">Toxa</span></span>
+      </a>
+
+      <nav class="nav">
+        <a href="#apartments">Xonadonlar</a>
+        <a href="#calculator">Ipoteka Kalkulyatori</a>
+        <a href="#amenities">Infratuzilma</a>
+        <a href="#location">Manzil</a>
+      </nav>
+
+      <a href="#calculator" class="btn btn-gold">Xonadon Tanlash</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="yh-hero">
+    <div class="container hero-grid">
+      <div class="hero-left">
+        <div class="badge-yh"><i class="fa-solid fa-key"></i> 2026-yilda topshiriladigan Premium Xonadonlar</div>
+        <h1>Orzuingizdagi Xonadon, <br><span class="gold-text">Yangi Hayot Majmuasida</span></h1>
+        <p>
+          Ekologik toza yashil hudud, yerosti avtoturargohi, 24/7 qo'riqlash xizmati va eng so'nggi Smart Home aqlli xonadon tizimlariga ega muhtasham turar-joy majmuasi.
+        </p>
+        <div class="hero-actions">
+          <a href="#apartments" class="btn btn-gold btn-lg">Kvartiralarni Ko'rish</a>
+          <a href="#calculator" class="btn btn-outline-light btn-lg">Ipotekani Hisoblash</a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="complex-visual">
+          <div class="complex-badge">98% Xavfsiz Yashil Hudud</div>
+          <div class="complex-stats">
+            <div><strong>14</strong><span>Qavatli binolar</span></div>
+            <div><strong>2.5 ga</strong><span>Shaxsiy xiyobon</span></div>
+            <div><strong>24/7</strong><span>Qo'riqlash</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apartments Catalog -->
+  <section class="section" id="apartments">
+    <div class="container">
+      <div class="section-title text-center">
+        <span class="yh-sub">Rejalashtirish (Planovka)</span>
+        <h2>Shinam va Yorug' Xonadonlar</h2>
+      </div>
+
+      <div class="apt-filter-tabs">
+        <button class="apt-btn active" data-rooms="1">1 xonali (48 m²)</button>
+        <button class="apt-btn" data-rooms="2">2 xonali (68 m²)</button>
+        <button class="apt-btn" data-rooms="3">3 xonali (95 m²)</button>
+        <button class="apt-btn" data-rooms="4">Penthouse (160 m²)</button>
+      </div>
+
+      <div class="apt-showcase-card">
+        <div class="apt-plan-visual" id="aptVisual">
+          <div class="blueprint-mock">
+            <span class="room-tag r1">Oshxona (14 m²)</span>
+            <span class="room-tag r2">Mehmonxona (22 m²)</span>
+            <span class="room-tag r3">Yotoqxona (18 m²)</span>
+          </div>
+        </div>
+        <div class="apt-info">
+          <h3 id="aptTitle">2 Xonali Shinam Kvartira</h3>
+          <p id="aptDesc">Keng panoramik derazalar, alohida kiyinish xonasi (garderob) va shinam terassa balkoni.</p>
+          <div class="apt-features">
+            <div><i class="fa-solid fa-expand"></i> Maydoni: <strong id="aptArea">68 m²</strong></div>
+            <div><i class="fa-solid fa-arrows-up-down"></i> Shift balandligi: <strong>3.30 m</strong></div>
+            <div><i class="fa-solid fa-bolt"></i> Smart Home tizimi: <strong>Kiritilgan</strong></div>
+          </div>
+          <div class="apt-price-row">
+            <span class="apt-price" id="aptPrice">$57,800</span>
+            <button class="btn btn-gold" onclick="orderApt()">Band Qilish</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mortgage Calculator -->
+  <section class="section bg-light" id="calculator">
+    <div class="container">
+      <div class="calc-box">
+        <div class="text-center">
+          <span class="yh-sub">Qulay Moliyalashtirish</span>
+          <h2>Ipoteka va Bo'lib To'lash Hisoblagichi</h2>
+          <p>Yillik 17% dan boshlanuvchi imtiyozli bank ipotekasi yoki 24 oylik 0% muddatli to'lov.</p>
+        </div>
+
+        <div class="calc-grid">
+          <div class="c-col">
+            <div class="f-item">
+              <label>Xonadon narxi: <strong id="lblPrice" class="gold-text">$58,000</strong></label>
+              <input type="range" id="rngPrice" min="35000" max="180000" step="1000" value="58000" class="yh-slider">
+            </div>
+
+            <div class="f-item">
+              <label>Boshlang'ich to'lov (25%): <strong id="lblDown" class="gold-text">$14,500</strong></label>
+              <input type="range" id="rngDown" min="15" max="50" step="5" value="25" class="yh-slider">
+            </div>
+
+            <div class="f-item">
+              <label>Ipoteka muddati:</label>
+              <select id="selTerm" class="yh-select">
+                <option value="10">10 yil (120 oy)</option>
+                <option value="15" selected>15 yil (180 oy)</option>
+                <option value="20">20 yil (240 oy)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="c-col">
+            <div class="mortgage-result">
+              <small>Oylik To'lov:</small>
+              <h3 id="resMonthly">$585 / oy</h3>
+              <p>Rasmiy daromad talab etilmaydigan maxsus dastur mavjud</p>
+              <button class="btn btn-gold btn-block" id="btnApplyMortgage">Menejer Bilan Maslahat</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="yh-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>YANGI HAYOT <span class="sub-toxa">Toxa</span></h3>
+        <p>Orzuingizdagi baxtli hayot poydevori.</p>
+        <small>© 2026 Toxa (qodirovtoirbektts-jpg). Barcha huquqlar himoyalangan.</small>
+      </div>
+      <div>
+        <h4>Havolalar</h4>
+        <a href="#apartments">Xonadonlar</a>
+        <a href="#calculator">Ipoteka kalkulyatori</a>
+        <a href="#">Hujjatlar</a>
+      </div>
+      <div>
+        <h4>Savdo Ofisi</h4>
+        <p>Toshkent sh., Yangi Hayot tumani, 5-mavze</p>
+        <p>+998 71 200 77 00</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-yh" id="yhToast">Murojaat qabul qilindi</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
